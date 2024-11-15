@@ -12,7 +12,7 @@ function EditProductForm() {
   const [description, setDescription] = useState("");
 
   const getCurrentProduct = async () => {
-    const result = await axios(
+    const result = await axios.get(
       `http://localhost:4001/products/${params.productId}`
     );
     setName(result.data.data.name);
@@ -119,7 +119,9 @@ function EditProductForm() {
         </label>
       </div>
       <div className="form-actions">
-        <button type="submit">Update</button>
+        <button type="submit">
+          Update
+        </button>
       </div>
     </form>
   );
